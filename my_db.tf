@@ -11,6 +11,9 @@ resource "aws_db_instance" "my_db" {
   vpc_security_group_ids = [aws_security_group.my_db_security.id]	
 }
 
+
+#DB Securitygroup
+
 resource "aws_security_group" "my_db_security" {
   name = "allow_db"
   description = "Allow EC2 to RDS"
