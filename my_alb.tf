@@ -1,10 +1,11 @@
-resource "aws_lb" "my_alb" {
+resource "aws_alb" "my_alb" {
  name = "my-alb"
  internal = false
  load_balancer_type = "application"
  security_groups = [aws_security_group.my_alb_security.id]
  subnets = [aws_subnet.Public-Subnet-A.id,aws_subnet.Public-Subnet-B.id] 
- enable_deletion_protection = true
+ enable_deletion_protection = false
+ enable_cross_zone_load_balancing = true
 }
 
 resource "aws_security_group" "my_alb_security"{

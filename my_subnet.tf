@@ -11,7 +11,8 @@ resource "aws_subnet" "Public-Subnet-A" {
 resource "aws_subnet" "Public-Subnet-B" {
  vpc_id = aws_vpc.my_vpc.id
  cidr_block = "10.0.1.0/24"
- availability_zone ="ap-northeast-2b"
+ map_public_ip_on_launch = true
+ availability_zone ="ap-northeast-2c"
  tags = {
   Name = "Public-Subnet-B"
 }
@@ -29,7 +30,7 @@ resource "aws_subnet" "Private-Subnet-A" {
 resource "aws_subnet" "Private-Subnet-B" {
  vpc_id = aws_vpc.my_vpc.id
  cidr_block = "10.0.32.0/20"
- availability_zone ="ap-northeast-2b"
+ availability_zone ="ap-northeast-2c"
  tags = {
   Name = "Private-Subnet-B"
 }
