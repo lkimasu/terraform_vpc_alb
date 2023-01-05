@@ -1,3 +1,5 @@
+#Public-Subnet
+
 resource "aws_subnet" "Public-Subnet-A" {
  vpc_id = aws_vpc.my_vpc.id
  cidr_block = "10.0.0.0/24"
@@ -17,6 +19,8 @@ resource "aws_subnet" "Public-Subnet-B" {
   Name = "Public-Subnet-B"
 }
 }
+
+#Private-Subnet
 
 resource "aws_subnet" "Private-Subnet-A" {
  vpc_id = aws_vpc.my_vpc.id
